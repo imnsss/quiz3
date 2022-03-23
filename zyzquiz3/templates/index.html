@@ -9,7 +9,7 @@
 		<script src="https://raw.githubusercontent.com/n5ro/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
 		<script>THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'</script>
 		<!-- one of these is enough; nft is for images,  the other markers. both handle location-based-->	
-		<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+		<!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script> -->
 		<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 		<!-- -->
 	</head>
@@ -20,17 +20,29 @@
         	arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
         	renderer="antialias: true; alpha: true">
 		
-		<!-- we dont have camera, assets, items, etc. in here yet -->
+		<!-- we dont have camera, assets, items, etc. in here yet -->\
 
-		<a-box color="yellow" gps-projected-entity-place="latitude: 51.049; longitude: -0.723" position="0 30 0"/>
+
+		<a-cylinder color="blue" gps-projected-entity-place="latitude: 51.049; longitude: -0.723" position="7 0 0" />
+		<a-cylinder color="blue" gps-projected-entity-place="latitude: 51.049; longitude: -0.723" position="3 0 7" />
+		<a-cylinder color="blue" gps-projected-entity-place="latitude: 51.049; longitude: -0.723" position="-3 0 5" rotation="60 0 0" />
+		<a-cylinder color="blue" gps-projected-entity-place="latitude: 51.049; longitude: -0.723" position="10 0 5" scale="0.5 0.5 0.5"/>
+		<a-cylinder color="blue" gps-projected-entity-place="latitude: 51.049; longitude: -0.723" position="-1 2 7" />
+
+		<!-- <a-box color="green" gps-projected-entity-place="latitude: 51.049; longitude: -0.723" position="0 0 5"/> -->
 
 		<a-camera gps-camera='simulateLatitude: 51.049; simulateLongitude: -0.723' rotation-reader></a-camera>
 
-		<a-text value="This will always face the user." look-at="[gps-camera]" scale="75 75 75" gps-entity-place="latitude: 51.0491; longitude: -0.723;"></a-text>
+		<a-text value="This is just a sentence" look-at="[gps-camera]" scale="75 75 75" gps-entity-place="latitude: 51.0491; longitude: -0.723;"></a-text>
 
 		<a-camera id='camera1' look-controls-enabled='false' arjs-look-controls='smoothingFactor: 0.1' gps-camera='gpsMinDistance: 5' rotation-reader> </a-camera>
 
-		
+		<a-box color="green" gps-projected-entity-place="latitude: 51.049; longitude: -0.723" position="7 0 0" />
+
+		<a-sphere color="red" gps-projected-entity-place="latitude: 51.049; longitude: -0.723" position="12 0 0" />
+
+		<a-plane color="purple" position="0 0 0" />
+
 		</a-scene>
 	</body>
 </html>
